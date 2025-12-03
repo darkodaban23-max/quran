@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Roblox News & Games</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e0f7fa, #e1bee7);
+            text-align: center;
+            overflow-x: hidden;
+        }
+        header {
+            background: linear-gradient(90deg, #4a90e2, #357ABD);
+            padding: 30px;
+            color: white;
+            font-size: 36px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .lang-selector {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .lang-selector img {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .lang-selector img:hover {
+            transform: scale(1.2);
+        }
+        section {
+            padding: 60px 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            background: linear-gradient(135deg, #ffffffcc, #f9f9f9cc);
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+            animation-delay: 0.2s;
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h2 { color: #4a90e2; margin-bottom: 20px; }
+        .news-item, .game-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 6px solid #4a90e2;
+            border-radius: 15px;
+            background: #ffffffcc;
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+        .news-item:hover, .game-card:hover {
+            transform: translateX(15px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .news-item img, .game-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        p { font-size: 18px; line-height: 1.6; text-align: left; }
+        .buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin-top: 30px; }
+        a.button {
+            padding: 20px 40px;
+            font-size: 20px;
+            color: white;
+            background: linear-gradient(90deg, #4a90e2, #357ABD);
+            border-radius: 15px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        a.button:hover { transform: scale(1.1); box-shadow: 0 10px 25px rgba(0,0,0,0.35); background: linear-gradient(90deg, #357ABD, #4a90e2); }
+        @media (max-width: 768px) {
+            .news-item, .game-card { flex-direction: column; text-align: center; }
+            .news-item p, .game-card p { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        My Roblox News & Games
+        <div class="lang-selector">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/Flag_of_Kurdistan.svg" alt="Kurdish" onclick="setLanguage('ku')">
+            <img src="https://flagcdn.com/w20/sa.png" alt="Arabic" onclick="setLanguage('ar')">
+            <img src="https://flagcdn.com/w20/us.png" alt="English" onclick="setLanguage('en')">
+            <img src="https://flagcdn.com/w20/cn.png" alt="Chinese" onclick="setLanguage('zh')">
+            <img src="https://flagcdn.com/w20/kr.png" alt="Korean" onclick="setLanguage('ko')">
+        </div>
+    </header>
+
+    <section id="news">
+        <h2>Latest Roblox News</h2>
+        <div class="news-item">
+            <img src="https://via.placeholder.com/100.png?text=News" alt="Update">
+            <p data-en="Update: Your Roblox game project reached version 1.1 with amazing new features!" data-ku="نوێکردنەوە: یاری روبلوکسەکەت گەیشتە version 1.1 بە تایبەتمەندیە نوێکان!" data-ar="تحديث: مشروع لعبتك على روبلوكس وصل إلى الإصدار 1.1 مع ميزات جديدة رائعة!" data-zh="更新：您的Roblox游戏项目已达到1.1版本，新增了精彩功能！" data-ko="업데이트: 당신의 Roblox 게임 프로젝트가 버전 1.1에 도달했습니다! 새로운 기능 추가.">Update: Your Roblox game project reached version 1.1 with amazing new features!</p>
+        </div>
+    </section>
+
+    <section id="games">
+        <h2>My Roblox Games</h2>
+        <div class="game-card">
+            <img src="https://via.placeholder.com/100.png?text=Game+1" alt="Game1">
+            <p data-en="My first Roblox game - try it now!" data-ku="یاری یەکەمم لە روبلوکس - ئێستا تاقی بکە!" data-ar="لعبتي الأولى على روبلوكس - جربها الآن!" data-zh="我的第一个Roblox游戏 - 现在试试吧！" data-ko="내 첫 번째 Roblox 게임 - 지금 해보세요!"><strong>Game 1:</strong> My first Roblox game - try it now!</p>
+            <a href="https://roblox.com/games/1234567890" class="button" target="_blank">Play</a>
+        </div>
+    </section>
+
+    <section id="links">
+        <h2>My Important Links</h2>
+        <div class="buttons">
+            <a href="https://youtube.com/@Lio_gamer36" class="button" target="_blank">YouTube</a>
+            <a href="https://roblox.com/users/Lio_gamer36/profile" class="button" target="_blank">Roblox</a>
+        </div>
+    </section>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if(text) el.textContent = text;
+            });
+        }
+    </script>
+</body>
+</html>
